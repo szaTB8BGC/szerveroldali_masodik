@@ -104,5 +104,14 @@ namespace LabEquipmentApi.Controllers
         {
             return _context.EquipmentItems.Any(e => e.Id == id);
         }
+
+        [HttpGet("available")]
+        public async Task<ActionResult<IEnumerable<Equipment>>> GetAvailableEquipment()
+        {
+            return await _context.EquipmentItems
+            .Where(e => e.IsAvailable)
+            .OrderBy(e => e.Name)
+            .ToListAsync();
+        }
     }
 }

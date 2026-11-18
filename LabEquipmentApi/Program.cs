@@ -9,7 +9,7 @@ builder.Services.AddDbContext<LabDbContext>(options =>
 
 builder.Services.AddControllers();
 
-builder.Services.AddOpenApi(options => { options.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0; });
+builder.Services.AddOpenApi(options => { options.OpenApiVersion = Microsoft.OpenApi.OpenApiSpecVersion.OpenApi3_0; });
 
 var app = builder.Build();
 
